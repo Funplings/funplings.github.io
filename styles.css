@@ -1,5 +1,5 @@
 body {
-    background-color: #e9edc9;
+    background-color: #ccd5ae;
     margin: 0;
 }
 
@@ -203,8 +203,24 @@ h4 {
     border-radius: 4px;
 }
 
+.read-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: rgb(75, 61, 54);
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(75, 61, 54, 0.4);
+    transition: opacity 0.2s ease;
+}
+
+.read-link:hover {
+    opacity: 0.5;
+}
+
 .works-section {
-    background-color: #ccd5ae;
+    background-color: #e9edc9;
     padding: 24px 0 64px;
     margin-top: 48px;
 }
