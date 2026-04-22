@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matthew Guo — Writer</title>
+    <style>
+        .works-section {
+            padding-top: 48px;
+        }
+
+        .writing-list {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .writing-entry {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .writing-entry + .writing-entry {
+            border-top: 1px solid rgba(75, 61, 54, 0.3);
+            padding-top: 48px;
+        }
+
+        .writing-thumbnail {
+            width: 280px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .writing-info h4 {
+            margin-bottom: 8px;
+        }
+
+        .writing-info a.read-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: rgb(75, 61, 54);
+            font-family: "Work Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(75, 61, 54, 0.4);
+            transition: opacity 0.2s ease;
+        }
+
+        .writing-info a.read-link:hover {
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .writing-entry {
+                flex-direction: column;
+            }
+
+            .writing-thumbnail {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="site-header"></div>
+    </div>
+
+    <div class="works-section">
+        <div class="container">
+        <div class="writing-list">
+
+            <div class="writing-entry">
+                <img src="src/assets/images/article_thumbnails/non_didactic_art.png" class="writing-thumbnail" alt="Non-Didactic Art Must Be Misinterpretable">
+                <div class="writing-info">
+                    <h4><b>Non-Didactic Art Must Be Misinterpretable</b></h4>
+                    <p>A media analysis of three anti-capitalist films ("Parasite", "Mickey 17", and "Sorry to Bother You") and their varying approaches towards didactism and subtlety.</p>
+                    <a href="https://glasshalftrue.substack.com/p/non-didactic-art-must-be-misinterpretable" target="_blank" class="read-link">Read on Substack →</a>
+                </div>
+            </div>
+
+            <div class="writing-entry">
+                <img src="src/assets/images/article_thumbnails/blood_meridian_review.png" class="writing-thumbnail" alt="Book Review: Blood Meridian by Cormac McCarthy">
+                <div class="writing-info">
+                    <h4><b>Book Review: "Blood Meridian" by Cormac McCarthy</b></h4>
+                    <p>A review of one of the most linguistically challenging books I've ever read, and why it was so rewarding because of it.</p>
+                    <a href="https://glasshalftrue.substack.com/p/book-review-blood-meridian-by-cormac" target="_blank" class="read-link">Read on Substack →</a>
+                </div>
+            </div>
+
+            <div class="writing-entry">
+                <img src="src/assets/images/article_thumbnails/eddington_review.png" class="writing-thumbnail" alt="Eddington: Movie Review (Both Sides)">
+                <div class="writing-info">
+                    <h4><b>Movie Review: "Eddington"</b></h4>
+                    <p>In which I argue that "Eddington", despite some seeing it as a "both sides" critique of the left and the right, ultimately takes a pretty clear and firm stance politically.</p>
+                    <a href="https://glasshalftrue.substack.com/p/eddington-movie-review-both-sides" target="_blank" class="read-link">Read on Substack →</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <script src="header.js"></script>
+    <script>initHeader('writer');</script>
+</body>
+</html>

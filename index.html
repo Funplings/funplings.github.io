@@ -1,16 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Funplings</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matthew Guo</title>
+    <style>
+        .profile {
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            width: 480px;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+
+        .bio {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 100%;
+            }
+        }
+
+
+        .showcase {
+            margin-top: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .showcase-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-heading:hover {
+            opacity: 0.6;
+        }
+
+        .showcase-content {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .showcase-images {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .showcase-images img {
+            width: 280px;
+            height: auto;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .showcase-images img:hover {
+            opacity: 0.85;
+        }
+
+        .showcase-images--illustrations img {
+            width: auto;
+            height: 180px;
+        }
+
+        .showcase-info h4 {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="site-header"></div>
+
+        <div class="profile">
+            <img src="src/assets/images/matthew_guo.png" class="profile-image">
+            <div class="bio">
+                Ni howdy! I'm Matthew Guo. I am currently based in NYC. I graduated from UC Berkeley with a B.A. in Computer Science in 2022 and am currently working as a backend software engineer, but at heart I'm an artist, and like to engage in various creative pursuits in my free time. I've been drawing/painting since I could hold a pencil, but in recent years I've also explored other creative fields, such as writing and filmmaking. This website is a portfolio of everything I've created that I'm proud of. I love connecting with people, so please feel free to reach out to me for any reason, whether you want to collaborate with me on a project, commission me for work, or even if you just think I'm cool and want to be friends!
+            </div>
+        </div>
+    </div>
+
+    <div class="works-section">
+        <div class="container">
+        <h2>Some Cool Stuff I've Worked On</h2>
+        <p>Below is a sample of work from each of my various areas of interest! You can click on any of them (or the associated role headers above) to see all of my work in that area.</p>
+        <div class="showcase">
+            <div class="showcase-section">
+                <a href="illustrator.html" class="section-heading">Illustration</a>
+                <div class="showcase-content">
+                    <div class="showcase-images showcase-images--illustrations">
+                        <a href="illustrator.html"><img src="src/assets/images/art/commissions/best-of-sept-2024.png" alt="Best of Northernlion 2024"></a>
+                        <a href="illustrator.html"><img src="src/assets/images/art/commissions/trailthread.png" alt="Trailthread"></a>
+                        <a href="illustrator.html"><img src="src/assets/images/art/personal/kim_and_jimmy.png" alt="Kim and Jimmy"></a>
+                        <a href="illustrator.html"><img src="src/assets/images/art/personal/kinds_of_kindness.png" alt="Kinds of Kindness"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-section">
+                <a href="game-developer.html" class="section-heading">Game Development</a>
+                <div class="showcase-content">
+                    <div class="showcase-images">
+                        <a href="game-developer.html"><img src="src/assets/images/game_thumbnails/it_aint_easy_being_a_mod.png" alt="It Ain't Easy Being a Mod"></a>
+                    </div>
+                    <div class="showcase-info">
+                        <h4><b>It Ain't Easy Being a Mod</b></h4>
+                        <p>Created for the 2023 GMTK game jam (Theme: "Role Reversal"). A (vaguely) Papers-Please inspired game in which you are a Disc- I mean, "Chaos", server moderator who must enforce the server's rules by deleting offending messages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-section">
+                <a href="filmmaker.html" class="section-heading">Filmmaking</a>
+                <div class="showcase-content">
+                    <div class="showcase-images">
+                        <a href="filmmaker.html"><img src="https://img.youtube.com/vi/J6DMEu5C-rU/maxresdefault.jpg" alt="The Tourist"></a>
+                    </div>
+                    <div class="showcase-info">
+                        <h4><b>The Tourist</b></h4>
+                        <p>Created for the 48 Hour Film Project in 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="header.js"></script>
+    <script>initHeader(null);</script>
+</body>
 </html>

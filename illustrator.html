@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matthew Guo — Visual Artist</title>
+    <style>
+        .works-section {
+            padding-top: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="site-header"></div>
+    </div>
+
+    <div class="works-section">
+        <div class="container">
+        <div class="category-section">
+            <div class="section-heading">Commissioned Work</div>
+            <div class="bio">I am currently open for commissions! I have previously worked on posters, key art, and Youtube thumbnails, but am open to any sort of illustration work. I can best be reached by email (matthew.guo@gmail.com).</div>
+            <div class="art-grid">
+                <div class="art-column">
+                    <img src="src/assets/images/art/commissions/please_clap.png" class="art-image">
+                </div>
+                <div class="art-column">
+                    <img src="src/assets/images/art/commissions/best-of-sept-2024.png" class="art-image">
+                    <img src="src/assets/images/art/commissions/la_noire.png" class="art-image">
+                    <img src="src/assets/images/art/commissions/trailthread.png" class="art-image">
+                </div>
+                <div class="art-column">
+                    <img src="src/assets/images/art/commissions/lobstar.png" class="art-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="section-heading">Personal Work</div>
+            <div class="art-grid">
+                <div class="art-column">
+                    <img src="src/assets/images/art/personal/cowboy_artemis.png" class="art-image">
+                    <img src="src/assets/images/art/personal/kinds_of_kindness.png" class="art-image">
+                    <img src="src/assets/images/art/personal/smoke_gets_in_your_eyes.png" class="art-image">
+                    <img src="src/assets/images/art/personal/the_cringe.png" class="art-image">
+                </div>
+                <div class="art-column">
+                    <img src="src/assets/images/art/personal/scavengers_reign.png" class="art-image">
+                    <img src="src/assets/images/art/personal/smiling_benders.png" class="art-image">
+                    <img src="src/assets/images/art/personal/burn_the_house_down.png" class="art-image">
+                    <img src="src/assets/images/art/personal/PEAK.png" class="art-image">
+                </div>
+                <div class="art-column">
+                    <img src="src/assets/images/art/personal/portland_japanese_garden.png" class="art-image">
+                    <img src="src/assets/images/art/personal/suburban_sunset.png" class="art-image">
+                    <img src="src/assets/images/art/personal/better_call_saul.png" class="art-image">
+                    <img src="src/assets/images/art/personal/kim_and_jimmy.png" class="art-image">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeBtn = document.querySelector('.modal-close');
+        const artImages = document.querySelectorAll('.art-image');
+
+        artImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('show');
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('show');
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    </script>
+    <script src="header.js"></script>
+    <script>initHeader('illustrator');</script>
+</body>
+</html>
