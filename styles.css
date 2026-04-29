@@ -121,7 +121,7 @@ h1 a {
 }
 
 .category-section {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .section-heading {
@@ -230,6 +230,46 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    #site-header {
+        padding-top: 64px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-top: 0;
+    }
+
+    .roles {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+
+    .roles .sep {
+        margin: 0 4px;
+    }
+
+    .roles a {
+        white-space: nowrap;
+    }
+
+    .social-links {
+        top: 16px;
+        right: 16px;
+        gap: 14px;
+    }
+
+    .social-links a {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
     .art-grid {
         grid-template-columns: 1fr;
         gap: 20px;

@@ -85,6 +85,31 @@
         .showcase-info h4 {
             margin-bottom: 8px;
         }
+
+        @media (max-width: 768px) {
+            .showcase {
+                margin-top: 32px;
+                gap: 32px;
+            }
+
+            .showcase-content {
+                flex-direction: column;
+            }
+
+            .showcase-images {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .showcase-images img {
+                width: calc(50% - 6px);
+            }
+
+            .showcase-images--illustrations img {
+                width: calc(50% - 6px);
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,7 +119,7 @@
         <div class="profile">
             <img src="src/assets/images/matthew_guo.png" class="profile-image">
             <div class="bio">
-                Ni howdy! My name's Matthew Guo. I graduated from UC Berkeley with a B.A. in Computer Science in 2022 and am currently working as a backend software engineer based in NYC. But at heart I'm an artist, and I like to engage in various creative pursuits in my free time. I've been drawing/painting since I could hold a pencil, but in recent years I've also explored other creative avenues as well, such as writing and filmmaking. This website is a portfolio of everything I've created and shared online that I'm proud of. I love connecting with people, so please feel free to reach out to me for any reason, whether you want to collaborate with me on a project, commission me for work, or even if you just think I'm cool and want to be friends!
+                Ni howdy! My name's <b>Matthew Guo</b>, but you may also know me by my online handles: <b>funplings</b> or <b>glasshalftrue</b>. I graduated from UC Berkeley with a B.A. in Computer Science in 2022 and am currently working as a backend software engineer based in NYC. But at heart I'm an artist, and I like to engage in various creative pursuits in my free time. I've been drawing/painting since I could hold a pencil, but in recent years I've also explored other creative avenues as well, such as writing and filmmaking. This website is a portfolio of everything I've created and shared online that I'm proud of. I love connecting with people, so please feel free to reach out to me for any reason, whether you want to collaborate with me on a project, commission me for work, or even if you just think I'm cool and want to be friends!
             </div>
         </div>
     </div>
@@ -120,12 +145,12 @@
                 <a href="game-developer.html" class="section-heading">Game Development</a>
                 <div class="showcase-content">
                     <div class="showcase-images">
-                        <img src="src/assets/images/game_thumbnails/it_aint_easy_being_a_mod.png" alt="It Ain't Easy Being a Mod">
+                        <img src="src/assets/images/game_thumbnails/silent_booster_pack.png" alt="The Silent Booster Pack">
                     </div>
                     <div class="showcase-info">
-                        <h4><b>It Ain't Easy Being a Mod</b></h4>
-                        <p>Created for the 2023 GMTK game jam (Theme: "Role Reversal"). A (vaguely) Papers-Please inspired game in which you are a Disc- I mean, "Chaos", server moderator who must enforce the server's rules by deleting offending messages.</p>
-                        <a href="https://daicreative.itch.io/it-aint-easy-being-a-mod" target="_blank" class="read-link">Play on itch.io →</a>
+                        <h4><b>The Silent Booster Pack</b></h4>
+                        <p>A mod for the roguelike deckbuilding game "Slay the Spire" that adds 10 original cards to the card pool for the character of The Silent. Card designs and art by me.</p>
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2894835703" target="_blank" class="read-link">View on Steam Workshop →</a>
                     </div>
                 </div>
             </div>

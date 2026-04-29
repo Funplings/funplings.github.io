@@ -29,6 +29,7 @@ function initHeader(activePage) {
             <a href="https://twitter.com/funplings" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://instagram.com/funplings" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://youtube.com/@funplings" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://letterboxd.com/glasshalftrue/" target="_blank"><i class="fa-brands fa-letterboxd"></i></a>
             <a href="mailto:matthew.guo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
         </div>
         <h1><a href="index.html">MATTHEW GUO</a></h1>
