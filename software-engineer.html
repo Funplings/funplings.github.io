@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Matthew Guo — Software Engineer</title>
+    <style>
+        .works-section {
+            padding-top: 48px;
+        }
+
+        .software-list {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .software-entry {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .software-entry + .software-entry {
+            border-top: 1px solid rgba(75, 61, 54, 0.3);
+            padding-top: 48px;
+        }
+
+        .software-thumbnail {
+            width: 280px;
+            aspect-ratio: 1;
+            flex-shrink: 0;
+            border-radius: 4px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .software-info h4 {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .software-entry {
+                flex-direction: column;
+            }
+
+            .software-thumbnail {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="site-header"></div>
+    </div>
+
+    <div class="works-section">
+        <div class="container">
+        <div class="category-section">
+            <div class="section-heading">Projects</div>
+            <div class="software-list">
+
+                <div class="software-entry">
+                    <a href="https://supreme-courtdle.vercel.app/" target="_blank"><img src="src/assets/images/software/ruth_bader_ginsburg.jpg" class="software-thumbnail" alt="Ruth Bader Ginsburg"></a>
+                    <div class="software-info">
+                        <h4><b>supreme-courtdle</b></h4>
+                        <p>A daily Supreme Court case guessing game where players predict how each justice voted.</p>
+                        <a href="https://supreme-courtdle.vercel.app/" target="_blank" class="read-link">Play supreme-courtdle →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="header.js"></script>
+    <script>initHeader('software-engineer');</script>
+</body>
+</html>

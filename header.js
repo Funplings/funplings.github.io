@@ -6,6 +6,7 @@ document.head.appendChild(fa);
 
 const roles = [
     { id: 'illustrator',     label: 'illustrator',      href: 'illustrator.html' },
+    { id: 'software-engineer', label: 'software engineer', href: 'software-engineer.html' },
     { id: 'game-developer',  label: 'game developer',  href: 'game-developer.html' },
     { id: 'writer',          label: 'writer',           href: 'writer.html' },
     { id: 'filmmaker',       label: 'filmmaker',        href: 'filmmaker.html' },
