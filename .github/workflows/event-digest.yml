@@ -1,0 +1,38 @@
+name: Event digest
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: event-digest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ingest events
+        if: github.event.schedule == '0 7 * * *' || github.event_name == 'workflow_dispatch'
+        run: npm run ingest
+      - name: Save refreshed event data
+        if: github.event.schedule == '0 7 * * *'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update event digest data"
+          file_pattern: event-digest/data/events.json
+      - name: Send morning digest
+        if: github.event.schedule == '0 12 * * *' || github.event_name == 'workflow_dispatch'
+        run: npm run send
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          DIGEST_FROM: ${{ secrets.DIGEST_FROM }}

@@ -75,53 +75,6 @@ const paintingDetails = {
     },
 };
 
-const frameVariants = [
-    '',
-    'project-frame--black',
-    'project-frame--white',
-    'project-frame--acacia',
-];
-
-function assignFrameVariants() {
-    const frames = [...document.querySelectorAll('.project-frame, .showcase-frame')];
-
-    const hashString = value => {
-        let hash = 2166136261;
-        for (let index = 0; index < value.length; index++) {
-            hash ^= value.charCodeAt(index);
-            hash = Math.imul(hash, 16777619);
-        }
-        return hash >>> 0;
-    };
-
-    const seededRandom = seed => {
-        let value = seed;
-        return () => {
-            value += 0x6d2b79f5;
-            let result = value;
-            result = Math.imul(result ^ (result >>> 15), result | 1);
-            result ^= result + Math.imul(result ^ (result >>> 7), result | 61);
-            return ((result ^ (result >>> 14)) >>> 0) / 4294967296;
-        };
-    };
-
-    const variants = frames.map((_, index) => frameVariants[index % frameVariants.length]);
-    const pageSeed = hashString(`${window.location.pathname}:${frames.map(frame => frame.querySelector('img')?.getAttribute('src') || '').join('|')}`);
-    const random = seededRandom(pageSeed);
-
-    for (let index = variants.length - 1; index > 0; index--) {
-        const swapIndex = Math.floor(random() * (index + 1));
-        [variants[index], variants[swapIndex]] = [variants[swapIndex], variants[index]];
-    }
-
-    frames.forEach((frame, index) => {
-        frame.classList.remove(...frameVariants.filter(Boolean));
-        if (variants[index]) {
-            frame.classList.add(variants[index]);
-        }
-    });
-}
-
 function initPaintingBackground(activePage) {
     if (document.querySelector('.painting-background')) {
         return;
@@ -157,7 +110,12 @@ function initFooter(activePage) {
 
 function initHeader(activePage) {
     initPaintingBackground(activePage);
-    assignFrameVariants();
+
+    document.querySelectorAll('.project-frame--acacia, .showcase-frame.project-frame--acacia').forEach(frame => {
+        if (!frame.querySelector(':scope > .frame-texture-overlay')) {
+            frame.insertAdjacentHTML('afterbegin', '<span class="frame-texture-overlay" aria-hidden="true"></span>');
+        }
+    });
 
     const rolesHTML = roles.map((role, i) => {
         const active = role.id === activePage ? ' class="active"' : '';

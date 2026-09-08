@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=paintings-64">
+    <link rel="stylesheet" href="styles.css?v=paintings-83">
     <title>Matthew Guo</title>
     <style>
         .profile {
@@ -16,20 +16,35 @@
             padding-top: 24px;
         }
 
+        .profile-intro {
+            margin: 0 0 18px;
+            font-size: 38px;
+            line-height: 1.15;
+        }
+
+        .profile-copy {
+            flex: 1;
+            min-width: 0;
+        }
+
         .profile-image,
         .showcase-frame img {
             display: block;
             width: 100%;
-            border: 8px solid;
-            border-color: #3f2916 #7f5227 #c99a4d #68421f;
+            border: 0;
             outline: 1px solid #28190e;
-            outline-offset: -9px;
+            outline-offset: -1px;
             box-sizing: border-box;
         }
 
         .profile-frame {
-            width: 480px;
-            flex: 0 0 480px;
+            width: 620px;
+            flex: 0 0 620px;
+        }
+
+        .profile-portrait {
+            width: 620px;
+            flex: 0 0 620px;
         }
 
         .profile-frame,
@@ -70,35 +85,68 @@
             box-shadow:
                 inset 0 0 0 2px rgba(202, 151, 73, 0.78),
                 inset 0 0 11px rgba(43, 25, 11, 0.42),
-                0 4px 7px rgba(31, 20, 10, 0.38),
-                0 12px 26px rgba(31, 20, 10, 0.34);
+                -8px 8px 0 rgba(26, 16, 7, 0.82);
         }
 
         .profile-frame::before,
         .profile-frame::after,
         .showcase-frame::before,
         .showcase-frame::after {
-            content: "";
+            display: none;
+        }
+
+        .profile-frame {
+            aspect-ratio: 1432 / 949;
+            padding: 0;
+            background: none;
+            border: 0;
+            outline: 0;
+            box-shadow: -8px 8px 0 rgba(26, 16, 7, 0.82);
+        }
+
+        .profile-frame .profile-image {
             position: absolute;
+            z-index: 0;
+            top: 10.5%;
+            left: 7.4%;
+            width: 85.2%;
+            height: 79%;
+            border: 0;
+            outline: 0;
+            object-fit: cover;
+        }
+
+        .profile-frame::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 1;
-            left: 50%;
-            width: 150px;
-            height: 24px;
-            background: url("src/assets/images/frame-flourish.svg") center / contain no-repeat;
-            filter: drop-shadow(0 1px 0 rgba(45, 29, 17, 0.7));
+            width: 100%;
+            height: 100%;
+            background: url("src/assets/images/3d-frame.png") center / contain no-repeat;
+            filter: none;
+            mix-blend-mode: normal;
             pointer-events: none;
+            transform: none;
         }
 
-        .profile-frame::before,
-        .showcase-frame::before {
-            top: -5px;
-            transform: translateX(-50%) rotate(180deg);
+        .profile-frame::after {
+            display: none;
         }
 
-        .profile-frame::after,
-        .showcase-frame::after {
-            bottom: -5px;
-            transform: translateX(-50%);
+        .frame-credit {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 1.2;
+            text-align: center;
+            opacity: 0.72;
+        }
+
+        .frame-credit a {
+            color: inherit;
+            text-underline-offset: 2px;
         }
 
         .bio {
@@ -107,11 +155,20 @@
         }
 
         @media (max-width: 768px) {
+            .profile-intro {
+                font-size: 32px;
+            }
+
             .profile {
                 flex-direction: column;
             }
 
             .profile-frame {
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .profile-portrait {
                 width: 100%;
                 flex-basis: auto;
             }
@@ -187,14 +244,20 @@
             object-fit: cover;
         }
 
-        .showcase-images--illustrations img {
+        .homepage-illustration-frame {
+            width: auto;
+            flex: 0 0 auto;
+            padding: 5px;
+        }
+
+        .homepage-illustration-frame img {
             width: auto;
             height: 180px;
             cursor: pointer;
             transition: opacity 0.2s ease;
         }
 
-        .showcase-images--illustrations img:hover {
+        .homepage-illustration-frame:hover img {
             opacity: 0.85;
         }
 
@@ -226,7 +289,8 @@
                 flex-basis: auto;
             }
 
-            .showcase-images--illustrations img {
+            .homepage-illustration-frame,
+            .homepage-illustration-frame img {
                 width: 100%;
                 height: auto;
             }
@@ -241,13 +305,20 @@
     <div class="works-section">
         <div class="container">
         <div class="profile">
-            <div class="profile-frame">
-                <img src="src/assets/images/matthew_guo.png" class="profile-image" alt="Matthew Guo">
+            <div class="profile-portrait">
+                <div class="profile-frame">
+                    <img src="src/assets/images/matthew_guo.png" class="profile-image" alt="Matthew Guo">
+                </div>
+                <div class="frame-credit">Frame asset created by my friend <a href="https://twitter.com/ntonio_enzo" target="_blank" rel="noopener">@ntonio_enzo</a></div>
             </div>
-            <div class="bio">
-                Ni howdy! My name's <b>Matthew Guo</b>, but you may also know me by my online handles: <b>funplings</b> or <b>glasshalftrue</b>. I graduated from UC Berkeley with a B.A. in Computer Science in 2022 and am currently working as a backend software engineer based in NYC. But at heart I'm an artist, and I like to engage in various creative pursuits in my free time. I've been drawing/painting since I could hold a pencil, but in recent years I've also explored other creative avenues as well, such as writing and filmmaking. This website is a portfolio of everything I've created and shared online that I'm proud of. I love connecting with people, so please feel free to reach out to me for any reason, whether you want to collaborate with me on a project, commission me for work, or even if you just think I'm cool and want to be friends!
+            <div class="profile-copy">
+                <h2 class="profile-intro">Ni howdy! I'm Matthew Guo.</h2>
+                <div class="bio">
+                    You may also know me by my online handles: <i>funplings</i> or <i>glasshalftrue</i>. I graduated from UC Berkeley with a B.A. in Computer Science in 2022 and am currently working as a backend software engineer based in NYC. But at heart I'm an artist, and I like to engage in various creative pursuits in my free time. I've been drawing/painting since I could hold a pencil, but in recent years I've also explored other creative avenues as well, such as writing and filmmaking. This website is a portfolio of everything I've created and shared online that I'm proud of. I love connecting with people, so please feel free to reach out to me for any reason, whether you want to collaborate with me on a project, commission me for work, or even if you just think I'm cool and want to be friends!
+                </div>
             </div>
         </div>
+        <br><br>
         <h2>Some Cool Stuff I've Worked On</h2>
         <p>Below is a sample of work from each of my various areas of interest! You can click on the section titles (or the roles in the header above) to see more of my work in each area.</p>
         <div class="showcase">
@@ -255,10 +326,10 @@
                 <a href="illustrator.html" class="section-heading">Illustration</a>
                 <div class="showcase-content">
                     <div class="showcase-images showcase-images--illustrations">
-                        <img src="src/assets/images/art/commissions/best-of-sept-2024.png" alt="Best of Northernlion 2024">
-                        <img src="src/assets/images/art/commissions/trailthread.png" alt="Trailthread">
-                        <img src="src/assets/images/art/personal/kim_and_jimmy.png" alt="Kim and Jimmy">
-                        <img src="src/assets/images/art/personal/kinds_of_kindness.png" alt="Kinds of Kindness">
+                        <div class="project-frame homepage-illustration-frame project-frame--acacia"><img src="src/assets/images/art/commissions/best-of-sept-2024.png" alt="Best of Northernlion 2024"></div>
+                        <div class="project-frame homepage-illustration-frame project-frame--white"><img src="src/assets/images/art/commissions/trailthread.png" alt="Trailthread"></div>
+                        <div class="project-frame homepage-illustration-frame project-frame--black"><img src="src/assets/images/art/personal/kim_and_jimmy.png" alt="Kim and Jimmy"></div>
+                        <div class="project-frame homepage-illustration-frame project-frame--acacia"><img src="src/assets/images/art/personal/kinds_of_kindness.png" alt="Kinds of Kindness"></div>
                     </div>
                 </div>
             </div>
@@ -266,7 +337,7 @@
             <div class="showcase-section">
                 <a href="software-engineer.html" class="section-heading">Software</a>
                 <div class="showcase-content">
-                    <div class="showcase-images showcase-images--square showcase-frame">
+                    <div class="showcase-images showcase-images--square showcase-frame project-frame--acacia">
                         <img src="src/assets/images/software/ruth_bader_ginsburg.jpg" alt="Ruth Bader Ginsburg">
                     </div>
                     <div class="showcase-info">
@@ -280,7 +351,7 @@
             <div class="showcase-section">
                 <a href="game-developer.html" class="section-heading">Game Development</a>
                 <div class="showcase-content">
-                    <div class="showcase-images showcase-frame">
+                    <div class="showcase-images showcase-frame project-frame--white">
                         <img src="src/assets/images/game_thumbnails/silent_booster_pack.png" alt="The Silent Booster Pack">
                     </div>
                     <div class="showcase-info">
@@ -294,7 +365,7 @@
             <div class="showcase-section">
                 <a href="writer.html" class="section-heading">Writing</a>
                 <div class="showcase-content">
-                    <div class="showcase-images showcase-frame">
+                    <div class="showcase-images showcase-frame project-frame--acacia">
                         <img src="src/assets/images/article_thumbnails/blood_meridian_review.png" alt="Book Review: Blood Meridian by Cormac McCarthy">
                     </div>
                     <div class="showcase-info">
@@ -350,7 +421,7 @@
             }
         });
     </script>
-    <script src="header.js?v=paintings-64"></script>
+    <script src="header.js?v=paintings-79"></script>
     <script>initHeader(null);</script>
 </body>
 </html>
