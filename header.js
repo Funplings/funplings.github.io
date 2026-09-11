@@ -5,12 +5,12 @@ fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min
 document.head.appendChild(fa);
 
 const roles = [
-    { id: 'illustrator',     label: 'illustrator',      href: 'illustrator.html' },
-    { id: 'software-engineer', label: 'software engineer', href: 'software-engineer.html' },
-    { id: 'game-developer',  label: 'game developer',  href: 'game-developer.html' },
-    { id: 'writer',          label: 'writer',           href: 'writer.html' },
-    { id: 'filmmaker',       label: 'filmmaker',        href: 'filmmaker.html' },
-    { id: 'tastemaker',      label: 'tastemaker',       href: 'tastemaker.html' },
+    { id: 'home', label: 'home', href: 'index.html' },
+    { id: 'illustrator', label: 'illustrations', href: 'illustrator.html' },
+    { id: 'software-engineer', label: 'projects', href: 'software-engineer.html' },
+    { id: 'game-developer', label: 'games', href: 'game-developer.html' },
+    { id: 'writer', label: 'writing', href: 'writer.html' },
+    { id: 'filmmaker', label: 'films', href: 'filmmaker.html' },
 ];
 
 const pagePaintings = {
@@ -99,6 +99,13 @@ function initFooter(activePage) {
     const painting = paintingDetails[activePage || 'home'];
     const footer = document.createElement('footer');
     footer.innerHTML = `
+        <div class="social-links">
+            <a href="https://twitter.com/funplings" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com/funplings" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@funplings" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://letterboxd.com/glasshalftrue/" target="_blank"><i class="fa-brands fa-letterboxd"></i></a>
+            <a href="mailto:matthew.guo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        </div>
         <a class="painting-credit" href="${painting.href}" target="_blank" rel="noopener">
             <span class="painting-credit__title"><i>${painting.title}</i>, ${painting.year}</span>
             <span>${painting.artist}</span>
@@ -109,6 +116,7 @@ function initFooter(activePage) {
 }
 
 function initHeader(activePage) {
+    activePage = activePage || 'home';
     initPaintingBackground(activePage);
 
     document.querySelectorAll('.project-frame--acacia, .showcase-frame.project-frame--acacia').forEach(frame => {
@@ -117,22 +125,14 @@ function initHeader(activePage) {
         }
     });
 
-    const rolesHTML = roles.map((role, i) => {
-        const active = role.id === activePage ? ' class="active"' : '';
-        const sep = i < roles.length - 1 ? '<span class="sep">/</span>' : '';
-        return `<a href="${role.href}"${active}>${role.label}</a>${sep}`;
+    const rolesHTML = roles.map(role => {
+        const active = role.id === activePage ? ' class="active" aria-current="page"' : '';
+        return `<a href="${role.href}"${active}>${role.label}</a>`;
     }).join('');
 
     initFooter(activePage);
     document.getElementById('site-header').innerHTML = `
-        <div class="social-links">
-            <a href="https://twitter.com/funplings" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://instagram.com/funplings" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@funplings" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://letterboxd.com/glasshalftrue/" target="_blank"><i class="fa-brands fa-letterboxd"></i></a>
-            <a href="mailto:matthew.guo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-        </div>
-        <h1><a href="index.html">MATTHEW GUO</a></h1>
+        <h1>Matthew Guo</h1>
         <p class="roles">${rolesHTML}</p>
     `;
 }

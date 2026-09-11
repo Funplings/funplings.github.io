@@ -1,0 +1,13 @@
+Generated with built-in imagegen. One asset, no variants or retries.
+Reference: the original cabinet image used for cabinet.webp.
+Output: cabinet-body.webp, 1536 x 1024, converted from PNG at WebP quality 88.
+
+Final prompt:
+
+Use case: product-mockup
+Asset type: standalone lower arcade cabinet body panel, intended for CSS nine-slice stretching beneath an existing arcade control deck.
+Input image: reference for materials, color, lighting, realism, and the matching oxblood side rails with fine brass inner edges. Derive a NEW lower front body panel only from the supplied cabinet design. Do not reproduce the upper screen, marquee, joystick, or buttons.
+Primary request: Exactly ONE high-quality raster image of a blank lower cabinet front/body panel. Perfectly straight-on orthographic symmetrical front view. Canvas 1536x1024. Tight full-bleed rectangular crop with NO outside margin: the panel itself fills the canvas edge to edge, fully opaque. Warm matte near-black charcoal wide blank center with subtle continuous fine-grain manufactured surface texture; narrow oxblood lacquer side rails at the far left and right, with very fine brass inner edges matching the reference finish. A subtle dark bottom plinth. The top is a plain horizontal dark seam that can sit directly beneath the existing control deck, not an ornate crown. Restrained soft depth, elegant realistic materials, lovingly restored 1980s industrial design.
+Nine-slice construction constraints: Keep ALL decorative corner hardware, curved edges, and bevel transitions restricted to the outermost 10 percent of the image. Center 80 percent must be continuous clean dark fine-grain texture with no distinct features so project title, description, and link can later be placed over it as HTML. Top and bottom center areas must be largely horizontal uniform strips. Left and right center areas must be straight consistent vertical strips that stretch vertically. No taper, wedges, diagonal side edges, horizontal perspective, or tilt.
+Text: NO TEXT, letters, numbers, labels, logos, or watermarks anywhere.
+Avoid: upper cabinet, screen, marquee, controls, buttons, joystick, vents, coinbox, coin slots, extra objects, backdrop, floor, environment, empty transparent margins, neon, cyberpunk, purple, heavy distress, cartoon illustration, plastic toy appearance. Preserve the reference cabinet's charcoal, oxblood, brass, and subtle realistic finish.

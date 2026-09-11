@@ -1,0 +1,31 @@
+Generated with built-in imagegen. One asset, no variants or retries.
+
+A refined vintage tabletop arcade cabinet front fascia/frame as a high quality
+product render, orthographic perfectly straight-on symmetrical view, entire
+compact cabinet tightly framed, landscape-ish canvas 1536x1280. Real transparent
+background outside cabinet, with no backdrop, floor, environment or large margins.
+
+Cabinet is warm matte near-black charcoal with slender deep oxblood/burgundy outer
+rails, fine brass edging, restrained realistic bevels and elegant small metal
+fasteners. Large perfectly rectangular inset BLACK blank screen approx left 10%,
+top 21%, width 80%, height 59% (inner screen near 16:10), lightly rounded corners,
+perfectly front facing edges, no screen reflections or graphics. Above it a slim
+BLANK warm ivory illuminated marquee around left 10%, top 5%, width 80%, height
+10%, with very fine amber horizontal stripe details at far left and far right
+ends; NO TEXT anywhere.
+
+Below screen, a compact beautiful dark arcade control deck with one red Bakelite
+ball joystick on left and three tasteful small buttons on right (muted mustard,
+burgundy, cream), subtle manufactured surface finish and chamfered front edge.
+No long pedestal/base/legs/coinbox. Keep screen opening the dominant area of the
+cabinet. Quality aesthetic: lovingly restored 1980s industrial design, carefully
+made object with convincing dimension through gentle studio light, elegant
+understated not cartoon or plastic toy. Avoid neon, cyberpunk, purple, excessive
+distress, cartoon illustration, labels, logos, watermarks, people, perspective skew.
+
+Asset will be placed repeatedly in two-column portfolio, HTML project image OVER
+the blank screen and HTML title OVER the blank marquee. Preserve clean rectangles
+for this.
+
+Output: 1374 x 1145 RGBA PNG, converted to WebP at quality 90 with alpha preserved.
+The overlay positions in game-developer.html match the actual generated asset.

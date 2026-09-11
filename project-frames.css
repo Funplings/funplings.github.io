@@ -1,0 +1,318 @@
+/* Shared preview dimensions and card layout for all non-illustration work. */
+:root {
+    --project-preview-ratio: 16 / 10;
+}
+
+/* Consistent text beneath project previews, including descriptions and links. */
+:is(.software-info, .game-info, .writing-info, .showcase-info),
+:is(.software-info, .game-info, .writing-info, .showcase-info) *,
+.film-entry > h4,
+.film-entry > h4 *,
+.film-entry > p,
+.film-entry > p * {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+:is(.software-info, .game-info, .writing-info, .showcase-info) h4,
+:is(.software-info, .game-info, .writing-info, .showcase-info) h4 *,
+.film-entry > h4,
+.film-entry > h4 * {
+    font-weight: 700;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px 40px;
+}
+
+/* Project frames shared by the home page and their portfolio pages. */
+
+.monitor-frame {
+    position: relative;
+    display: block;
+    padding: 5px 5px 12px;
+    border: 1px solid #8c8777;
+    border-radius: 0;
+    background: #d8d0b9;
+    border-color: #f5efdc #9a927e #9a927e #f5efdc;
+    box-shadow: inset 1px 1px 0 #fff9e8, inset -1px -1px 0 #aaa18f;
+    color: inherit;
+    text-decoration: none;
+}
+
+.monitor-frame::before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 12px;
+    width: 32px;
+    height: 4px;
+    background: repeating-linear-gradient(90deg, #8d8677 0 1px, transparent 1px 3px);
+}
+
+.monitor-frame::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #9ab573;
+    border: 1px solid #898574;
+    box-shadow: 0 0 2px #b9df8580;
+}
+
+.monitor-frame:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 7px;
+}
+
+.software-thumbnail {
+    width: 100%;
+    aspect-ratio: var(--project-preview-ratio);
+    box-sizing: border-box;
+    border: 3px solid;
+    border-color: #686658 #a6a08c #b8b09a #777363;
+    outline: 1px solid #34372e;
+    outline-offset: -3px;
+    border-radius: 0;
+    display: block;
+    object-fit: cover;
+}
+
+.software-thumbnail--portrait {
+    object-position: center 25%;
+}
+
+.software-thumbnail--screenshot {
+    object-fit: cover;
+    background: #f1ede4;
+}
+
+.software-thumbnail--icon {
+    object-fit: cover;
+    padding: 0;
+    background: #f0ede3;
+}
+
+.software-info {
+    padding: 22px 4px 0;
+}
+
+.software-info h4 {
+    margin: 0 0 8px;
+}
+
+.software-info p {
+    margin: 0 0 12px;
+}
+
+.software-thumbnail--logo {
+    box-sizing: border-box;
+    object-fit: cover;
+    padding: 0;
+    background: #67cfe8;
+}
+
+@media (max-width: 768px) {
+    .software-thumbnail--logo {
+        padding: 0;
+    }
+
+}
+
+.game-entry {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    isolation: isolate;
+    transition: transform 220ms ease;
+}
+
+/* A thin molded-plastic rim and grip grooves surround the cartridge label. */
+.cartridge-frame {
+    position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 14px 10px;
+    border: 1px solid;
+    border-color: #919187 #4d5049 #41453d #7b7e73;
+    background: #686c62;
+    box-shadow: inset 0 1px 0 #a0a394, inset 0 -2px 0 #494e43;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.cartridge-label {
+    display: block;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid #21251f;
+    background: #181d17;
+}
+.cartridge-frame::before,
+.cartridge-frame::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 14px;
+    width: 7px;
+    background: repeating-linear-gradient(to bottom,
+        #41473c 0 1px, #858a7b 1px 2px, transparent 2px 5px);
+    pointer-events: none;
+}
+.cartridge-frame::before { left: 3px; }
+.cartridge-frame::after { right: 3px; }
+.game-thumbnail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 220ms ease;
+}
+.cartridge-frame:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 6px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .game-entry:hover { transform: translateY(-4px); }
+    .cartridge-frame:hover .game-thumbnail { filter: brightness(1.06); }
+}
+.game-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px 4px 0;
+    color: var(--ink);
+}
+.game-info h4 {
+    margin: 0 0 8px;
+}
+.game-info p {
+    margin: 0 0 12px;
+}
+.game-info .read-link {
+    align-self: flex-start;
+    margin-top: auto;
+}
+.game-info .read-link:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 5px;
+}
+@media (max-width: 768px) {
+    .game-entry { width: 100%; max-width: 580px; margin-inline: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .game-entry, .game-thumbnail { transition: none; }
+}
+
+/* Ruled composition paper with a red margin, visible around the image. */
+.paper-frame {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 280px;
+    flex: 0 0 280px;
+    padding: 9px 9px 13px 19px;
+    border: 1px solid #c9c3ad;
+    background:
+        linear-gradient(to right, transparent 12px, #c78580 12px 13px, transparent 13px),
+        repeating-linear-gradient(to bottom, #fbf7e8 0 8px, #b6ccd1 8px 9px);
+}
+.paper-frame > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #2c2519;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+/* Transparent sprocket holes run along both edges of the film. */
+.film-frame {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 280px;
+    flex: 0 0 280px;
+    padding: 13px 5px;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(#24231f, #24231f) left center / 5px 100% no-repeat,
+                linear-gradient(#24231f, #24231f) right center / 5px 100% no-repeat;
+}
+.film-frame::before,
+.film-frame::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 13px;
+    box-sizing: border-box;
+    border-block: 3px solid #24231f;
+    background: repeating-linear-gradient(to right, #24231f 0 6px, transparent 6px 13px, #24231f 13px 21px);
+    pointer-events: none;
+}
+.film-frame::before { top: 0; }
+.film-frame::after { bottom: 0; }
+.film-frame > img,
+.film-frame > .video {
+    display: block;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    border: 2px solid #24231f;
+    border-radius: 0;
+    outline: 0;
+}
+.film-frame--thumbnail > img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.film-frame--video {
+    width: min(100%, 866px);
+    flex: none;
+}
+@media (max-width: 768px) {
+    .paper-frame,
+    .film-frame {
+        width: 100%;
+        flex-basis: auto;
+    }
+}
+
+/* Size the complete frame, including its decorative edge, consistently. */
+.monitor-frame,
+.cartridge-frame,
+.paper-frame,
+.film-frame {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    aspect-ratio: var(--project-preview-ratio);
+    flex: none;
+}
+.cartridge-label {
+    min-height: 0;
+    aspect-ratio: auto;
+}
+.monitor-frame > img,
+.paper-frame > img,
+.film-frame > img,
+.film-frame > .video {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .project-grid { grid-template-columns: minmax(0, 1fr); }
+}
