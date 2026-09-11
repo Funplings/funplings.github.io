@@ -99,13 +99,6 @@ function initFooter(activePage) {
     const painting = paintingDetails[activePage || 'home'];
     const footer = document.createElement('footer');
     footer.innerHTML = `
-        <div class="social-links">
-            <a href="https://twitter.com/funplings" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://instagram.com/funplings" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@funplings" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://letterboxd.com/glasshalftrue/" target="_blank"><i class="fa-brands fa-letterboxd"></i></a>
-            <a href="mailto:matthew.guo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-        </div>
         <a class="painting-credit" href="${painting.href}" target="_blank" rel="noopener">
             <span class="painting-credit__title"><i>${painting.title}</i>, ${painting.year}</span>
             <span>${painting.artist}</span>
@@ -118,6 +111,27 @@ function initFooter(activePage) {
 function initHeader(activePage) {
     activePage = activePage || 'home';
     initPaintingBackground(activePage);
+
+    // Cut the upper edge inside the glyphs; light catches the lower stone lip.
+    if (!document.getElementById('stone-lettering-filters')) {
+        document.body.insertAdjacentHTML('afterbegin', `
+            <svg id="stone-lettering-filters" width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none">
+                <defs>
+                    <filter id="stone-incised" x="-10%" y="-20%" width="120%" height="140%" color-interpolation-filters="sRGB">
+                        <feOffset in="SourceAlpha" dx="0.3" dy="1" result="shifted"/>
+                        <feComposite in="SourceAlpha" in2="shifted" operator="out" result="inner-edge"/>
+                        <feGaussianBlur in="inner-edge" stdDeviation="0.25" result="inner-soft"/>
+                        <feFlood flood-color="#30271d" flood-opacity="0.85"/>
+                        <feComposite in2="inner-soft" operator="in" result="inner-shadow"/>
+                        <feComposite in="shifted" in2="SourceAlpha" operator="out" result="outer-edge"/>
+                        <feFlood flood-color="#fff9e8" flood-opacity="0.85"/>
+                        <feComposite in2="outer-edge" operator="in" result="lip"/>
+                        <feMerge><feMergeNode in="lip"/><feMergeNode in="SourceGraphic"/><feMergeNode in="inner-shadow"/></feMerge>
+                    </filter>
+                </defs>
+            </svg>
+        `);
+    }
 
     document.querySelectorAll('.project-frame--acacia, .showcase-frame.project-frame--acacia').forEach(frame => {
         if (!frame.querySelector(':scope > .frame-texture-overlay')) {
@@ -132,7 +146,15 @@ function initHeader(activePage) {
 
     initFooter(activePage);
     document.getElementById('site-header').innerHTML = `
-        <h1>Matthew Guo</h1>
+        <h1><span>Matthew Guo</span></h1>
+        <div class="social-links">
+            <a href="https://twitter.com/funplings" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com/funplings" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@funplings" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://letterboxd.com/glasshalftrue/" target="_blank"><i class="fa-brands fa-letterboxd"></i></a>
+            <a href="mailto:matthew.guo@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        <div class="header-divider" aria-hidden="true"></div>
         <p class="roles">${rolesHTML}</p>
     `;
 }

@@ -1,0 +1,5 @@
+Use case: photorealistic-natural
+Asset type: seamless square sandstone texture for a website content panel.
+Input image: material reference only. Match the natural sandy tan stone surface of the supplied ancient stone tablet.
+Primary request: create a flat, full-bleed close-up of this weathered sandstone surface, with realistic irregular pits, shallow worn depressions, small mineral flecks, muted ochre and pale beige color variation, occasional faint gray weathering, and softly eroded uneven grain at varied scales.
+Composition: orthographic front-on surface filling the entire square; no slab silhouette, no outer edges, no white background, no text. Seamless tiling on all four edges; consistent diffuse lighting across the image, no vignette. Natural material photography, not procedural noise or plaster. Keep overall contrast moderate and surface light enough for dark brown text to be readable. Avoid large cracks, strong stains, distinct repeated motifs, deep shadows, any objects or lettering.

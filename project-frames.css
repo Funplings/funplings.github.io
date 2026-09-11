@@ -129,7 +129,6 @@
     flex-direction: column;
     min-width: 0;
     isolation: isolate;
-    transition: transform 220ms ease;
 }
 
 /* A thin molded-plastic rim and grip grooves surround the cartridge label. */
@@ -178,7 +177,6 @@
     outline-offset: 6px;
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .game-entry:hover { transform: translateY(-4px); }
     .cartridge-frame:hover .game-thumbnail { filter: brightness(1.06); }
 }
 .game-info {
@@ -241,8 +239,8 @@
     padding: 13px 5px;
     border: 0;
     border-radius: 0;
-    background: linear-gradient(#24231f, #24231f) left center / 5px 100% no-repeat,
-                linear-gradient(#24231f, #24231f) right center / 5px 100% no-repeat;
+    background: linear-gradient(#000000, #000000) left center / 5px 100% no-repeat,
+                linear-gradient(#000000, #000000) right center / 5px 100% no-repeat;
 }
 .film-frame::before,
 .film-frame::after {
@@ -252,8 +250,8 @@
     right: 5px;
     height: 13px;
     box-sizing: border-box;
-    border-block: 3px solid #24231f;
-    background: repeating-linear-gradient(to right, #24231f 0 6px, transparent 6px 13px, #24231f 13px 21px);
+    border-block: 3px solid #000000;
+    background: repeating-linear-gradient(to right, #000000 0 6px, transparent 6px 13px, #000000 13px 21px);
     pointer-events: none;
 }
 .film-frame::before { top: 0; }
@@ -264,7 +262,7 @@
     width: 100%;
     max-width: none;
     box-sizing: border-box;
-    border: 2px solid #24231f;
+    border: 2px solid #000000;
     border-radius: 0;
     outline: 0;
 }
@@ -313,6 +311,30 @@
     aspect-ratio: auto;
     object-fit: cover;
 }
+
+.monitor-frame > img,
+.paper-frame > img,
+.film-frame > img {
+    transition: filter 220ms ease;
+}
+
+@media (hover: hover) {
+    .monitor-frame:hover > img,
+    .cartridge-frame:hover .game-thumbnail,
+    .paper-frame:hover > img,
+    .film-frame:hover > img {
+        filter: brightness(1.25);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .monitor-frame > img,
+    .paper-frame > img,
+    .film-frame > img {
+        transition: none;
+    }
+}
+
 @media (max-width: 768px) {
     .project-grid { grid-template-columns: minmax(0, 1fr); }
 }
