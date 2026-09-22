@@ -221,12 +221,9 @@ Public pages use version query strings on shared CSS and JavaScript URLs. These 
 - Do not create files named after versioned URLs.
 - Preserve existing local changes when reviewing the final diff.
 
-## Hosting and unrelated infrastructure
+## Hosting
 
 The observed public site uses GitHub Pages at `https://funplings.github.io/`. Local edits do not publish themselves through a build step in this repository.
 
-`.github/workflows/event-digest.yml` describes a separate event digest workflow. It references an `event-digest` directory that is absent from the current checkout.
-
-- Do not treat the event digest workflow as a portfolio build or deployment process.
 - Leave unrelated workflows and local editor configuration unchanged during visual work.
 - Follow the user’s deployment request and the repository’s actual hosting configuration before publishing changes.
