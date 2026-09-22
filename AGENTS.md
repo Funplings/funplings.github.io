@@ -123,7 +123,7 @@ Each page can contain inline styles after its shared stylesheet links. The homep
 
 The intended atmosphere resembles a personal gallery with tangible materials. Paintings sit behind warm cream text. Wood, paper, film, and molded plastic distinguish the work categories.
 
-The header and footer resemble warm stone slabs. The user refers to this surface as marble. Its current implementation uses `sandstone.jpg` beneath a translucent warm overlay.
+The header and footer resemble warm stone slabs. The user refers to this surface as marble. Its current implementation uses a solid, desaturated warm gray (`#ded9cf`) without a texture image. The shared `--stone` color also fills the root canvas. `overscroll-behavior: none` on `html` and `body` disables native edge bounce so it cannot expose the fixed painting.
 
 - Preserve the warm cream, brown, and forest-green palette.
 - Keep the painting visible behind the content.
@@ -199,12 +199,12 @@ External services supply fonts, icons, video embeds, and linked project destinat
 
 ## Local preview and validation
 
-A plain static HTTP server can serve the repository root. No build command is required.
+A plain static HTTP server can serve the repository root. No build command is required. `dev-server.py` provides a Python standard-library preview with automatic browser refresh when HTML, CSS, JavaScript, or assets change. It injects its reload script only into local HTTP responses and disables local caching; published files are unchanged.
 
 The existing preview often uses `http://127.0.0.1:8000/`. `.claude/launch.json` separately defines an `npx serve` preview on port `4173`.
 
 1. Reuse the current preview server when it is available.
-2. Otherwise, run `python3 -m http.server 8000 --bind 127.0.0.1` from the repository root.
+2. Otherwise, run `python3 dev-server.py` from the repository root for automatic refresh on port 8000.
 3. Open the affected page through the local server.
 4. Check a desktop viewport and a mobile viewport near `390px` wide.
 5. Check the complete header and footer after shared layout changes.

@@ -2,7 +2,18 @@
     --forest: #1a2510;
     --ink: #f1ebcf;
     --ink-rule: rgba(244, 241, 232, 0.62);
+    --stone: #ded9cf;
     --body-text-shadow: -2px 2px 0 rgba(4, 7, 2, 0.98);
+}
+
+html {
+    background-color: var(--stone);
+}
+
+html,
+body {
+    /* Stop native edge bounce from exposing the fixed painting. */
+    overscroll-behavior: none;
 }
 
 body {
@@ -542,12 +553,7 @@ h4,
 /* Stone frames the artwork above and below the main content. */
 body > .container:has(#site-header),
 footer {
-    background-color: #d8b77f;
-    background-image:
-        linear-gradient(rgba(242, 223, 187, 0.82), rgba(242, 223, 187, 0.82)),
-        url("src/assets/images/textures/sandstone.jpg");
-    background-size: auto, 1000px 1000px;
-    background-repeat: repeat;
+    background-color: var(--stone);
     border-top: 1px solid rgba(255, 251, 235, 0.75);
     border-bottom: 1px solid rgba(91, 83, 66, 0.48);
     box-shadow: inset 0 3px 2px rgba(255, 252, 241, 0.28),
