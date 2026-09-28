@@ -14,7 +14,7 @@ This repository contains Matthew Guo’s personal portfolio. The site combines a
 
 ## Runtime and page structure
 
-The site uses static HTML pages, shared CSS, and plain browser JavaScript. There is no application server, package manifest, bundler, or compilation step.
+The site uses static HTML pages, shared CSS, and plain browser JavaScript. There is no production application server, package manifest, bundler, or compilation step.
 
 Each public page loads `styles.css`. Most project pages also load `project-frames.css` after it. Inline `<style>` blocks define page-specific layouts and can override shared declarations.
 
@@ -188,7 +188,7 @@ Local visual assets live under `src/assets/images/`.
 | `books/` | Book covers |
 | `arcade/`, `vines/` | Additional decorative assets |
 
-The site also contains portrait and frame assets directly under `images/`. Some textures have accompanying prompt files.
+Portrait and frame assets also live directly under `src/assets/images/`. Some generated assets have accompanying prompt files.
 
 - Preserve asset provenance files and existing credits.
 - Use exact filename case in image paths.
